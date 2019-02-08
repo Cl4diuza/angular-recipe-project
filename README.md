@@ -1,3 +1,6 @@
+# Recipe project from Udemy
+this project was from udemy course section
+
 # AngularPractise
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
