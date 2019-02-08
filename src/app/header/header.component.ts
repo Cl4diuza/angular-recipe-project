@@ -1,0 +1,31 @@
+import { HttpClient } from '@angular/common/http';
+import { DataStorageService } from './../shared/data-storage.service';
+import { Component } from '@angular/core';
+
+import { AuthService } from '../auth/auth.service';
+
+@Component({
+    selector: 'app-header',
+    templateUrl: './header.component.html'
+
+})
+export class HeaderComponent {
+  constructor(private httpClient: HttpClient,
+     private dataStorageService: DataStorageService, public authService: AuthService) {}
+
+  onSaveData() {
+    this.dataStorageService.storeRecipes().subscribe(
+      (response: Response) => {
+        console.log(response);
+      }
+    );
+  }
+
+  onFetchData() {
+    this.dataStorageService.getRecipes();
+  }
+
+  onLogout() {
+    this.authService.logout();
+  }
+}
